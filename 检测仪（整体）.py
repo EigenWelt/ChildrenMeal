@@ -49,29 +49,16 @@ def calweight(idx):
         nowWeight = abs(value-initWeight)
     return nowWeight
 
-def processWeight():
-
-def main_detect():
-    request_url = "https://aip.baidubce.com/rest/2.0/image-classify/v1/multi_object_detect"
-    f = open('pospic.jpg', 'rb')
-    img = base64.b64encode(f.read())
-    params = {"image": img}
-    request_url = request_url + "?access_token=" + token
-    headers = {'content-type': 'application/x-www-form-urlencoded'}
-    response = requests.post(request_url, data=params, headers=headers)
-    if response:
-        print(response.json())
-
 def camerapos(idx):#摄像头定位餐品
     res=[]
     cap = cv2.VideoCapture(idx)
     rval,frame = cap.read()
-    img = numpy.rot90(frame)
+    img = frame
     sp = img.shape
-    x1 = int(sp[0]*0.05)
-    x2 = int(sp[0]*0.70)
-    y1 = int(sp[1]*0.20)
-    y2 = int(sp[1]*0.80)
+    x1 = int(sp[0]*0.28)
+    x2 = int(sp[0]*1.00)
+    y1 = int(sp[1]*0.10)
+    y2 = int(sp[1]*0.55)
     dst = img[y1:y2,x1:x2]
     grey = cv2.cvtColor(dst,cv2.COLOR_BGR2GRAY)
     element1 = cv2.getStructuringElement(cv2.MORPH_RECT,(3,3))
@@ -90,13 +77,14 @@ def camerapos(idx):#摄像头定位餐品
     response = requests.post(request_url, data=params, headers=headers)
     if response:
         raw = response.text
+        print(raw)
         json_data = json.loads(raw)
         result = (json_data.get('result'))
         top = jsonpath(json_data, "$..top")
         height = jsonpath(json_data, "$..height")
         width = jsonpath(json_data, "$..width")
         left = jsonpath(json_data, "$..left")
-        for i in range(0,len(top)-1):
+        for i in range(len(top)):
             res.append([top[i],height[i],width[i],left[i]])
         return res
 
@@ -117,11 +105,12 @@ def faceSearch(idx):#人脸识别
 
 if __name__=='__main__':
     token = getToken()
-    while (1):
-        if (重量较大):
-            idnum,username = faceSearch(0)
-            if idnum<-1:
-                print("该用户未注册")
-            else:
-                输入数据库
-            结束
+    try:
+        idnum,username = faceSearch(0)
+        if idnum<-1:
+            print("该用户未注册")
+        else:
+            print(username)
+    except:
+        print("no user")
+    print(camerapos(1))
