@@ -45,6 +45,7 @@
 |global|client||aipface对象|
 |global|token|string|accesstoken|
 |getToken|||获取百度云的accesstoken|
+|**musicplay**|||播放音乐|
 |**calweight**|||获取某一传感器的示数|
 |calweight|**value**|int|示数|
 |calweight|initWeight|int|去皮|
@@ -90,6 +91,9 @@
 |faceSearch|**response**||返回的response|
 |**main**|||主函数|
 
+### 临时文件
+1. pospic.jpg 与菜品摄像头相对应的图像
+2. SearchPic.jpg 与人像摄像头相对应的图片
 
 ## 进展与说明
 ### 2021.5.26 21:30
@@ -134,3 +138,15 @@ if response:
 ### 2021.5.28 17:00
 
 除力传感器外，均已基本完成部署。项目文件已上传。
+
+### 2021.5.28 21:00
+
+已完成音响的部署，更新了appid便于可视化管理人脸库；
+
+已完成人像识别、图像分割的检验。图像分割采用灰度图膨胀、腐蚀、再膨胀得到的图像。
+
+摄像头与外壳已经组装完毕。
+
+摄像头调参已完成。
+
+缺少力传感器、以及关于力传感器的相应数据处理。目前已经测试成功放置3物品的情况。
