@@ -160,3 +160,9 @@ if response:
 <img src="https://latex.codecogs.com/svg.image?\begin{cases}a&plus;d=A&plus;D\\b=B&plus;C\\-ra&plus;rd=Dr&plus;CR-Ar-BR\end{cases}" title="\begin{cases}a+d=A+D\\b=B+C\\-ra+rd=Dr+CR-Ar-BR\end{cases}" />
 
 其中a,b,d为待求量，A,B,C,D为称重传感器测得量，r为A、D之间的距离，R为B、C之间的距离。
+
+### 2021.5.29 1:00
+
+摄像头、音响已实装完成。树莓派已入模型。
+
+正在对压力传感器重新布线。
