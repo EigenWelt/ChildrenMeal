@@ -34,6 +34,63 @@
 |SCK|29|GPIO.OUT|压力传感器时钟模块|
 |DT|31|GPIO.IN|压力传感器数据模块|
 
+### 五、文档
+|函数|变量名|类型|说明|
+|---|---|---|---|
+|global|SCK|list|压力传感器时钟引脚|
+|global|DT|list|数据引脚|
+|global|APP_ID|string|appid|
+|global|API_KEY|string|apikey|
+|global|SECRET_KEY|string|secretkey|
+|global|client||aipface对象|
+|global|token|string|accesstoken|
+|getToken|||获取百度云的accesstoken|
+|**calweight**|||获取某一传感器的示数|
+|calweight|**value**|int|示数|
+|calweight|initWeight|int|去皮|
+|calweight|nowWeight|int|称量值|
+|calweight|flag|bool|是否首次测量|
+|processWeight|||处理每一分餐盘的质量|
+|**camerapos**|||摄像头定位餐品|
+|camerapos|**res**|list|结果|
+|camerapos|cap||摄像头读入图像|
+|camerapos|rval|int|读入状态|
+|camerapos|frame|image|读入图像|
+|camerapos|img|image|旋转90°后的图像|
+|camerapos|x1|int|截取矩形的左端点x|
+|camerapos|x2|int|截取矩形的右端点x|
+|camerapos|y1|int|截取矩形的上端点y|
+|camerapos|y2|int|截取矩形的下断点y|
+|camerapos|dst|image|截取的图像|
+|camerapos|grey|image|灰度图|
+|camerapos|element1|image|用于膨胀腐蚀的元素|
+|camerapos|element2|image|用于二次膨胀的元素|
+|camerapos|request_url|string|api|
+|camerapos|f|file|文件读入数据流|
+|camerapos|img|string|base64加密过的图片|
+|camerapos|params|list|参量|
+|camerapos|headers|string|headers|
+|camerapos|response|module|request返回值|
+|camerapos|raw|string|request原始文本|
+|camerapos|json_data|json|raw形成的json文件|
+|camerapos|top|int|返回的top|
+|camerapos|height|int|返回的height|
+|camerapos|width|int|返回的width|
+|camerapos|left|int|返回的left|
+|**faceSearch**|||人脸搜索|
+|faceSearch|cap||摄像头读入图像|
+|faceSearch|rval|int|读入状态|
+|faceSearch|det|image|读入图像|
+|faceSearch|det2|image|旋转90°后的图像|
+|faceSearch|f|file|文件|
+|faceSearch|pic||经过base64加密的图像|
+|faceSearch|image|string|base64加密字符串|
+|faceSearch|image_type|string|"BASE64"|
+|faceSearch|group_id_list|string|组别|
+|faceSearch|**response**||返回的response|
+|**main**|||主函数|
+
+
 ## 进展与说明
 ### 2021.5.26 21:30
 1. 完成了音响的配置与测试。需要注意出厂将右声道的正负极已经连接，因而需要连接红线。同时，要将树莓派的config中audio设置成从耳机孔输出。杜邦线过短，可能需要更换。
@@ -73,3 +130,7 @@ if response:
 人像注册完成了线上测试。
 
 正在开展压力传感器测试、摄像头距离测试
+
+### 2021.5.28 17:00
+
+除力传感器外，均已基本完成部署。项目文件已上传。
