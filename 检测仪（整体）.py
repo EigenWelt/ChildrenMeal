@@ -8,14 +8,20 @@ import base64
 import requests
 import json
 from jsonpath import jsonpath
+import pygame
 
 SCK=[7,37,16,40]
 DT=[11,35,18,38]
-APP_ID = '24250074'
-API_KEY = 'jO83mibjqItqUZfijp6MnpYF'
-SECRET_KEY = 'xNFDBFafiFuRXPMAObwMv1rOcq38Yh8s'
+APP_ID = '24268444'
+API_KEY = '2zE3m7iYPZV4Pf1mdhK4pA9r'
+SECRET_KEY = 'UurxDGsHPNy4xsGXv89wHqQ3VDkCIaOC'
 client = AipFace(APP_ID, API_KEY, SECRET_KEY)
 token = ''
+
+def music_play(music):
+    pygame.mixer.init()
+    pygame.mixer.music.load(music)
+    pygame.mixer.music.play()
 
 def getToken():
     host = 'https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=' + API_KEY + '&client_secret=' + SECRET_KEY
@@ -107,10 +113,9 @@ if __name__=='__main__':
     token = getToken()
     try:
         idnum,username = faceSearch(0)
-        if idnum<-1:
-            print("该用户未注册")
-        else:
-            print(username)
+        print(username)
+        music_play('success.mp3')
     except:
         print("no user")
+        music_play('fail.mp3')
     print(camerapos(1))
