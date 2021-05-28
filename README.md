@@ -31,8 +31,10 @@
 端口号：BOARD
 |变量名|端口号|类型|说明|
 |---|---|---|---|
-|SCK|29|GPIO.OUT|压力传感器时钟模块|
-|DT|31|GPIO.IN|压力传感器数据模块|
+|SCK|7|GPIO.OUT|压力传感器时钟模块|
+|DT[]|[11,35,18,38]|GPIO.IN|压力传感器数据模块|
+|[VCC]|4||音响的电源正极（黄线）|
+|[GND]|14||音响的电源负极（蓝线）|
 
 ### 五、文档
 |函数|变量名|类型|说明|
@@ -150,3 +152,11 @@ if response:
 摄像头调参已完成。
 
 缺少力传感器、以及关于力传感器的相应数据处理。目前已经测试成功放置3物品的情况。
+
+### 2021.5.29 0:00
+
+完成力系方程推导，决定改为3个位置的方程：
+
+<img src="https://latex.codecogs.com/svg.image?\begin{cases}a&plus;d=A&plus;D\\b=B&plus;C\\-ra&plus;rd=Dr&plus;CR-Ar-BR\end{cases}" title="\begin{cases}a+d=A+D\\b=B+C\\-ra+rd=Dr+CR-Ar-BR\end{cases}" />
+
+其中a,b,d为待求量，A,B,C,D为称重传感器测得量，r为A、D之间的距离，R为B、C之间的距离。
