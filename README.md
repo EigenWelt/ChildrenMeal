@@ -167,10 +167,8 @@ if response:
 
 正在对压力传感器重新布线。
 
-### 2021.5.30 8：37
+### 2021.5.30 8:37
 
 给雨泽的定制语音已测试完毕
 
 # 合板完工！
-
-![image](https://github.com/EigenWelt/ChildrenMeal/blob/main/FIST%EF%BC%81%E7%BB%A7%E5%BE%80%E5%BC%80%E6%9D%A5%EF%BC%81.jpg)
