@@ -172,3 +172,5 @@ if response:
 给雨泽的定制语音已测试完毕
 
 # 合板完工！
+
+![image](https://github.com/EigenWelt/ChildrenMeal/blob/main/FIST%EF%BC%81%E7%BB%A7%E5%BE%80%E5%BC%80%E6%9D%A5%EF%BC%81.jpg)
